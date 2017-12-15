@@ -20,6 +20,9 @@ conda env list
 source activate my_venv
 source deactivate 
 
+### See outdated packages
+conda update --all --dry-run
+
 # Git
 
 ## Purge a particular file from git history 
@@ -44,6 +47,17 @@ git diff-tree --no-commit-id --name-only -r <commit-sha>
 ### Find processes running on a port and kill process
 lsof -i:8080 # To list any process listening to the port 8080
 kill $(lsof -t -i:8080) #To kill any process listening to the port 8080
+
+### Prevent Mac from sleeping until task is done
+caffeinated -s <command>
+_combine with curl for large files_
+curl http://wombat.com/map.pdf —o map.pdf
+
+### Find misbehaving process and kill it
+ps aux | grep PROCESS
+_OR_
+pgrep PROCESS
+pkill -9 PROCESS
 
 # Linux
 ### List all users on a VM:
